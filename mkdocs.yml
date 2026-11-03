@@ -80,12 +80,11 @@ plugins:
   - search
   - tags
   # "Last updated" date at the bottom of each page, from git history.
-  # TODO: uncomment after the first commit (before that it has no git log,
-  # warns, and --strict builds fail). Already installed.
-  # - git-revision-date-localized:
-  #     type: date
-  #     fallback_to_build_date: true
-  #     enable_creation_date: false
+  # A page that isn't committed yet shows the build date.
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      enable_creation_date: false
 
 markdown_extensions:
   # Python Markdown
