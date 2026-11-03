@@ -1,0 +1,57 @@
+/* ROTSE colours. The logo is white on transparent, so the header stays dark
+   in both schemes. Change the colours here, nowhere else. */
+
+:root {
+  --rotse-navy: #0b1426;
+  --rotse-accent: #e8a33d; /* warm amber, easy on dark-adapted eyes */
+
+  --md-primary-fg-color: var(--rotse-navy);
+  --md-primary-fg-color--light: #1c2a45;
+  --md-primary-fg-color--dark: #050a14;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: var(--rotse-accent);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 220;
+  --md-default-bg-color: #0d1117;
+  --md-typeset-a-color: var(--rotse-accent);
+}
+
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: #9a5b00;
+}
+
+/* A bit more room for the round logo in the header */
+.md-header__button.md-logo img {
+  height: 2rem;
+}
+
+/* Logo on the home page */
+.rotse-hero {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 160px;
+}
+
+[data-md-color-scheme="default"] .rotse-hero {
+  /* white logo would vanish on a light page */
+  filter: invert(1);
+}
+
+/* Buttons: the navy primary colour vanishes on the dark page, use amber */
+.md-typeset .md-button {
+  color: var(--rotse-accent);
+  border-color: var(--rotse-accent);
+}
+.md-typeset .md-button--primary,
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background-color: var(--rotse-accent);
+  border-color: var(--rotse-accent);
+  color: #0b1426;
+}
+[data-md-color-scheme="default"] .md-typeset .md-button:not(.md-button--primary):not(:hover) {
+  color: #9a5b00;
+  border-color: #9a5b00;
+}

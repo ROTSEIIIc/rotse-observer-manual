@@ -1,0 +1,143 @@
+site_name: ROTSE-IIIc Observer Manual
+site_description: How to observe with the ROTSE-IIIc telescope at the H.E.S.S. site, Namibia
+site_author: TODO maintainer / group
+copyright: >
+  &copy; 2026 ROTSE Namibia &middot; maintained by TODO group &middot;
+  report mistakes to TODO email
+# site_url: https://example.org/rotse-manual/   # TODO: set once hosting is decided
+
+# Uncomment once the repo is pushed, to get "edit this page" buttons:
+# repo_url: https://github.com/<org>/rotse-observer-manual
+# edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Before you observe: before-you-observe.md
+  - Startup: startup.md
+  - Observing: observing.md
+  - Weather & safety: weather-and-safety.md
+  - Shutdown: shutdown.md
+  - Troubleshooting: troubleshooting.md
+  - Contacts: contacts.md
+  - About this manual: about.md
+  - For editors:
+      - Feature showcase: editors/features.md
+      - Tags: editors/tags.md
+
+theme:
+  name: material
+  logo: assets/rotse.png
+  favicon: assets/rotse.png
+  # System fonts only: no Google Fonts request, so the site works on the
+  # site network without internet.
+  font: false
+  palette:
+    # Dark is listed first, so it is the default.
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  features:
+    - navigation.sections       # menu groups shown as sections
+    - navigation.top            # "back to top" button
+    - navigation.footer         # previous / next links at the bottom
+    - navigation.tracking       # URL follows the section you scroll to
+    - navigation.indexes        # a section can have its own index.md page
+    - toc.follow                # right-hand contents follows scrolling
+    - search.highlight          # highlight search words on the page
+    - search.suggest            # complete search words
+    - search.share              # share link for a search
+    - content.code.copy         # copy button on code blocks
+    - content.code.annotate     # (1) annotations in code blocks
+    - content.tabs.link         # tabs with the same label switch together
+    - content.tooltips          # nicer tooltips for links and abbreviations
+    # Not enabled, see the feature showcase for what they do:
+    # - navigation.tabs         # top-level menu as tabs under the header
+    # - navigation.instant      # page changes without full reload
+    # - navigation.expand       # all menu sections open
+    # - toc.integrate           # contents inside the left menu
+    # - header.autohide         # header hides when scrolling down
+    # - content.action.edit     # "edit this page" button (needs repo_url)
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  # Math rendering. Loaded from the internet; without internet, formulas show
+  # as raw TeX. Remove these two lines if you don't need math.
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - tags
+  # "Last updated" date at the bottom of each page, from git history.
+  # TODO: uncomment after the first commit (before that it has no git log,
+  # warns, and --strict builds fail). Already installed.
+  # - git-revision-date-localized:
+  #     type: date
+  #     fallback_to_build_date: true
+  #     enable_creation_date: false
+
+markdown_extensions:
+  # Python Markdown
+  - abbr                        # *[XMPP]: tooltips for abbreviations
+  - admonition                  # !!! note boxes
+  - attr_list                   # { .md-button } and { width="300" }
+  - def_list                    # definition lists
+  - footnotes                   # [^1]
+  - md_in_html                  # Markdown inside <div markdown>
+  - tables
+  - toc:
+      permalink: true
+  # PyMdown Extensions
+  - pymdownx.arithmatex:        # $math$
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret              # ^^insert^^ and H^2^
+  - pymdownx.critic             # {++added++} {--removed--}
+  - pymdownx.details            # ??? collapsible boxes
+  - pymdownx.emoji:             # :material-telescope:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:         # code highlighting, line numbers
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite       # `#!python code` inline
+  - pymdownx.keys               # ++ctrl+c++
+  - pymdownx.mark               # ==highlight==
+  - pymdownx.smartsymbols       # (c) --> 1/2
+  - pymdownx.snippets:          # --8<-- "file.md" includes
+      base_path: [includes]
+      auto_append: [abbreviations.md]
+      check_paths: true
+  - pymdownx.superfences:       # code blocks inside boxes, Mermaid diagrams
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:            # === "Tab"
+      alternate_style: true
+  - pymdownx.tasklist:          # - [ ] checklists
+      custom_checkbox: true
+  - pymdownx.tilde              # ~~strike~~ and H~2~O
+
+extra:
+  generator: false        # hides "Made with Material for MkDocs"
+  # Icon links in the footer, uncomment and fill in:
+  # social:
+  #   - icon: fontawesome/brands/github
+  #     link: https://github.com/<org>/rotse-observer-manual
+  #     name: Source on GitHub
+  #   - icon: material/email
+  #     link: mailto:<maintainer email>
+  #     name: Report a mistake
