@@ -1,8 +1,8 @@
-site_name: ROTSE-IIIc Observer Manual
+site_name: AfAS ROTSE-IIIc Observer Manual
 site_description: How to observe with the ROTSE-IIIc telescope at the H.E.S.S. site, Namibia
-site_author: TODO maintainer / group
+site_author: Enzo Peres Afonso / group
 copyright: >
-  &copy; 2026 ROTSE Namibia &middot; maintained by TODO group &middot;
+  &copy; African Astronomical Society &middot; maintained by Enzo Peres Afonso &middot;
   report mistakes to TODO email
 # site_url: https://example.org/rotse-manual/   # TODO: set once hosting is decided
 
@@ -73,6 +73,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
+  - javascripts/print.js
   # Math rendering (MathJax). Remove these two lines if you don't need math.
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
@@ -86,6 +87,24 @@ plugins:
       type: date
       fallback_to_build_date: true
       enable_creation_date: false
+  # Whole manual on one page (/print_page/), for printing and the PDF.
+  # Must stay the LAST plugin. Make the PDF: uv run python scripts/make_pdf.py
+  - print-site:
+      add_to_navigation: false
+      print_page_title: Print version
+      add_cover_page: true
+      cover_page_template: pdf/cover_page.tpl
+      add_table_of_contents: true
+      toc_title: Contents
+      toc_depth: 2
+      enumerate_headings: true
+      enumerate_headings_depth: 2
+      enumerate_figures: false
+      exclude:
+        - editors/*
+
+hooks:
+  - hooks/build_info.py   # version + date for the PDF cover
 
 markdown_extensions:
   # Python Markdown

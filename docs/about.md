@@ -28,6 +28,12 @@ The manual is written in Markdown and built with
 `rotse-observer-manual` repository (TODO: link once pushed). Each page shows the date it was
 last changed at the bottom.
 
+## Print version / PDF
+
+The [print version](../print_page/) has the whole manual on one page, with a cover and a table
+of contents. Use your browser's **Print → Save as PDF** on it (it prints in light colours,
+with all boxes open), or ask the maintainer for the current PDF.
+
 ## Acknowledgements
 
 TODO: H.E.S.S. collaboration / site, pyobs developers, funding, ...

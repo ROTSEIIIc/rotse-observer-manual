@@ -55,3 +55,86 @@
   color: #9a5b00;
   border-color: #9a5b00;
 }
+
+/* ---------- Print / PDF ----------------------------------------------------
+   Used by browser Print and by scripts/make_pdf.py (print page). The colour
+   scheme switch, open boxes and tab labels are done in javascripts/print.js. */
+
+.print-tab-label { display: none; }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 15mm 18mm;
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 8pt;
+      color: #666;
+    }
+  }
+  @page :first {
+    @bottom-right { content: none; }
+  }
+
+  /* paper is white, also in the page margins */
+  :root, html, body {
+    color-scheme: light !important;
+    background-color: #fff !important;
+  }
+
+  /* show every tab, each under its label; hide the tab bar */
+  .md-typeset .tabbed-labels { display: none; }
+  .md-typeset .tabbed-set > .tabbed-content > .tabbed-block { display: block !important; }
+  .md-typeset .print-tab-label {
+    display: block;
+    font-weight: 700;
+    margin: 0.8em 0 0.3em;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* don't split boxes, tables, figures and cards across pages */
+  .md-typeset .admonition,
+  .md-typeset details,
+  .md-typeset table,
+  .md-typeset figure,
+  .md-typeset .grid.cards > ul > li {
+    break-inside: avoid;
+  }
+  .md-typeset h1, .md-typeset h2, .md-typeset h3 { break-after: avoid; }
+
+  /* white logo on white paper */
+  .rotse-hero, .rotse-cover-logo { filter: invert(1); }
+  .rotse-hero { width: 110px; }
+
+  /* "copy" buttons and header permalinks are useless on paper */
+  .md-clipboard, .md-typeset .headerlink { display: none !important; }
+}
+
+/* Cover page of the print version (pdf/cover_page.tpl) */
+.rotse-cover {
+  text-align: center;
+  padding-top: 18vh;
+}
+.rotse-cover-logo { width: 180px; }
+.md-typeset .rotse-cover h1 {
+  margin: 1.2rem 0 0.4rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+.rotse-cover-sub { font-size: 1.1em; }
+.md-typeset .rotse-cover-meta {
+  display: table;
+  margin: 2.5rem auto 1.5rem;
+  font-size: 0.8rem;
+  border: none;
+}
+.md-typeset .rotse-cover-meta td { text-align: left; padding: 0.3em 1em; border: none; }
+.md-typeset .rotse-cover-meta td:first-child { font-weight: 700; }
+.rotse-cover-note { font-size: 0.8em; color: var(--md-default-fg-color--light); }
+
+@media screen {
+  /* white logo on the dark screen version of the print page */
+  [data-md-color-scheme="slate"] .rotse-cover-logo { filter: none; }
+  [data-md-color-scheme="default"] .rotse-cover-logo { filter: invert(1); }
+}

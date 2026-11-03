@@ -53,6 +53,9 @@ rotse-observer-manual/
 ├── includes/                ← reusable text, pulled into pages (not pages themselves)
 │   ├── abbreviations.md     ← glossary: tooltips on every page
 │   └── roof-warning.md      ← example of a shared warning box
+├── pdf/cover_page.tpl       ← cover page of the PDF
+├── hooks/build_info.py      ← version + date from git (for the PDF cover)
+├── scripts/make_pdf.py      ← makes the PDF
 ├── templates/               ← copy-paste starting points (not part of the site)
 │   ├── page.md
 │   └── snippets.md
@@ -193,7 +196,29 @@ git commit -m "Write startup procedure"
 git push -u origin docs/startup-procedure # then open a PR, someone else reads it
 ```
 
-## 8. Publish
+## 8. PDF version
+
+```bash
+uv run python scripts/make_pdf.py      # -> dist/rotse-observer-manual-<date>.pdf
+```
+
+Builds the site, then prints the print page (whole manual on one page, `/print_page/`) to PDF
+with headless Chrome. Needs Google Chrome or Chromium (set `CHROME=/path/to/chrome` if it
+isn't found). `dist/` is not in git.
+
+- **Cover page:** `pdf/cover_page.tpl` (logo, title, version, date, maintainer). Version and
+  date come from git via `hooks/build_info.py`. **Commit (and ideally tag, e.g. `v1.0`)
+  before making a PDF to send**: otherwise the version says `-dirty`.
+- **What's in it:** every page in `nav:` except `editors/*` (see `print-site:` → `exclude`
+  in `mkdocs.yml`).
+- **Print styling** (light colours, all collapsible boxes open, every tab shown under its
+  label, page numbers, no box split across pages): `docs/javascripts/print.js` and the
+  "Print / PDF" part of `docs/stylesheets/extra.css`. The same applies when someone uses
+  the browser's Print on any page.
+- A sent PDF is a snapshot: it says so on the cover. Once `site_url` is set in `mkdocs.yml`,
+  the cover also points to the online version.
+
+## 9. Publish
 
 `uv run mkdocs build` writes the finished website into `site/`: plain HTML files, no server
 software needed.
@@ -204,7 +229,7 @@ software needed.
 
 TODO: pick one and record it here.
 
-## 9. Tooling note
+## 10. Tooling note
 
 Material for MkDocs reaches **end of life on 5 May 2027** (security fixes until then; the
 build prints a notice about it). Its successor [Zensical](https://zensical.org) (same authors)
