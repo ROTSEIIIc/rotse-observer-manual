@@ -16,10 +16,15 @@ nav:
   - Startup: startup.md
   - Observing: observing.md
   - Weather & safety: weather-and-safety.md
-  - Shutdown: shutdown.md
+  - Shutdown & closeup: shutdown.md
   - Troubleshooting: troubleshooting.md
   - Contacts: contacts.md
   - About this manual: about.md
+  - Data access: data-access.md
+  - Maintenance:
+      - Running the vacuum pump: maintenance/dry-air-pump.md
+      - Resolving severe mount failures: maintenance/mount-severe-fault.md
+      - Manual operation of the roof: maintenance/manual-operation-of-roof.md
   - For editors:
       - Feature showcase: editors/features.md
       - Tags: editors/tags.md
