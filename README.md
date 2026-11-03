@@ -167,12 +167,6 @@ Coloured boxes (the indented text, 4 spaces, belongs to the box):
 - **Shared boxes or paragraphs:** put them in a file in `includes/` and pull them into any
   page with a line `--8<-- "filename.md"`. Edit once, it changes everywhere.
 
-### Diagrams and math need internet
-
-Mermaid diagrams and math formulas load a library from the internet when the page opens.
-On site without internet they show as plain text. The `privacy` plugin can download them
-into the site (see the end of the feature showcase).
-
 ## 6. House rules for content
 
 - **Never guess a procedure or a limit.** If it isn't confirmed, leave a `TODO` box saying
@@ -204,8 +198,8 @@ git push -u origin docs/startup-procedure # then open a PR, someone else reads i
 `uv run mkdocs build` writes the finished website into `site/`: plain HTML files, no server
 software needed.
 
-- **On site (`ocs-server`)**: copy `site/` to a folder served by nginx. Works without
-  internet. TODO: decide path/URL and write the deploy command here.
+- **On `ocs-server`**: copy `site/` to a folder served by nginx.
+  TODO: decide path/URL and write the deploy command here.
 - **GitHub Pages**: `uv run mkdocs gh-deploy` (once the repo is on GitHub).
 
 TODO: pick one and record it here.

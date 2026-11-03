@@ -28,8 +28,10 @@ theme:
   name: material
   logo: assets/rotse.png
   favicon: assets/rotse.png
-  # System fonts only: no Google Fonts request, so the site works on the
-  # site network without internet.
+  # System fonts (fast, nothing to download). For Material's web font instead:
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
   font: false
   palette:
     # Dark is listed first, so it is the default.
@@ -71,8 +73,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  # Math rendering. Loaded from the internet; without internet, formulas show
-  # as raw TeX. Remove these two lines if you don't need math.
+  # Math rendering (MathJax). Remove these two lines if you don't need math.
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 

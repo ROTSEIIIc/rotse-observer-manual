@@ -570,10 +570,6 @@ Good for overview pages, like the home page.
 Drawn from text, so they're easy to change. Syntax:
 [mermaid.js.org](https://mermaid.js.org/intro/).
 
-!!! warning "Needs internet"
-    The diagram library is downloaded when the page is opened. Without internet, the
-    diagram shows as text. For pages needed on site without internet, use an image.
-
 ### Flowchart
 
 === "Result"
@@ -658,10 +654,6 @@ Mermaid also does pie charts, Gantt charts (e.g. a night plan), timelines and mo
 
 ## Math
 
-!!! warning "Needs internet"
-    Like diagrams, MathJax is downloaded when the page opens. Without internet you see the
-    raw TeX.
-
 === "Result"
 
     Inline: the airmass is roughly \(X \approx \sec z\).
@@ -735,7 +727,7 @@ comments: remove the `#` to try them.
 | Feature | Setting | Effect | Here |
 |---|---|---|---|
 | Dark / light toggle | `theme.palette` | Sun/moon button in the header | on |
-| Search | `plugins: search` | Search box, works offline | on |
+| Search | `plugins: search` | Search box | on |
 | Tags | `plugins: tags` | Tag pages by topic | on |
 | Copy button | `content.code.copy` | On every code block | on |
 | Back to top | `navigation.top` | Button when scrolling up | on |
@@ -752,7 +744,3 @@ comments: remove the `#` to try them.
 | Blog plugin | `plugins: blog` | Blog section, e.g. a night log or news for observers | off |
 | Social cards | `plugins: social` | Preview images for links (needs extra system libraries) | off |
 | Language | `theme.language: de` | Interface in another language | `en` |
-
-!!! tip "Offline use on site"
-    For a site that must work fully without internet, look at the `offline` and `privacy`
-    plugins first: together they make Mermaid and math work without a connection too.
