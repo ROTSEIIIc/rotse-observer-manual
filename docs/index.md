@@ -1,62 +1,52 @@
----
-hide:
-  - navigation
----
-
 ![ROTSE logo](assets/rotse.png){ .rotse-hero }
 
 # ROTSE-IIIc Observer Manual
 
-How to observe with **ROTSE-IIIc**, the robotic telescope at the H.E.S.S. site in Namibia.
-The telescope is controlled with [pyobs](https://www.pyobs.org).
+How to observe with **ROTSE-IIIc**, the robotic telescope at the H.E.S.S. site in Namibia,
+and how to keep it running. The telescope is controlled with [pyobs](https://www.pyobs.org).
 
 !!! danger "Emergency: roof won't close, or anything unsafe"
-    :material-phone-alert: Call **TODO: name, phone number** immediately.
+    Call **TODO: name, phone number** immediately.
     All contacts: [Contacts](contacts.md).
 
 !!! warning "Safety first"
     If you are unsure whether it is safe to open the roof, **don't**. Read
-    [Weather & safety](weather-and-safety.md) before your first night.
+    [Weather and safety](weather-and-safety.md) before your first night.
 
-## A night at a glance
+The manual has three parts. Pick the one that fits what you are doing.
 
-<div class="grid cards" markdown>
+## Observer guide
 
--   :material-clipboard-check-outline: __1. Before you observe__
+For observers. Read in this order before your first night.
 
-    ---
+| Page | What it covers |
+|---|---|
+| [Before you observe](before-you-observe.md) | Accounts, software, access. Once. |
+| [Weather and safety](weather-and-safety.md) | When the roof may open, and what closes it |
+| [Startup](startup.md) | Bring the system up and open the roof |
+| [Observing](observing.md) | Point, track and take images |
+| [Shutdown](shutdown.md) | Park, close, check the roof is really closed |
+| [Troubleshooting](troubleshooting.md) | What to do when something goes wrong |
 
-    Accounts, access, pre-night checklist.
+## Maintenance
 
-    [:octicons-arrow-right-24: Before you observe](before-you-observe.md)
+For someone at the telescope who must fix something or do it by hand.
 
--   :material-power: __2. Startup__
+| Page | What it covers |
+|---|---|
+| [Safety on site](maintenance/safety.md) | Read first, before working at the telescope |
+| [Dry air pump](maintenance/dry-air-pump.md) | When and how to run the dry air pump on the camera |
+| [Manual roof operation](maintenance/manual-roof.md) | Close or open the roof by hand |
+| [Severe mount faults](maintenance/mount-severe-fault.md) | Mount stuck, faulted or in a limit |
+| [Restarting machines and services](maintenance/restart-services.md) | A computer, service or pyobs module is down |
 
-    ---
+## Reference
 
-    Bring the system up, check the weather, open the roof.
+How the system is built.
 
-    [:octicons-arrow-right-24: Startup](startup.md)
-
--   :material-telescope: __3. Observing__
-
-    ---
-
-    Point, track and take images with the pyobs GUI.
-
-    [:octicons-arrow-right-24: Observing](observing.md)
-
--   :material-power-sleep: __4. Shutdown__
-
-    ---
-
-    Park, close, check the roof is really closed.
-
-    [:octicons-arrow-right-24: Shutdown](shutdown.md)
-
-</div>
-
-Something wrong? See [Troubleshooting](troubleshooting.md) or [Contacts](contacts.md).
+| Page | What it covers |
+|---|---|
+| [Network and services](reference/network-and-services.md) | Every machine, IP address, port and web address, and how to check them |
 
 ## The system
 
@@ -64,9 +54,9 @@ Something wrong? See [Troubleshooting](troubleshooting.md) or [Contacts](contact
 |---|---|
 | Mount | Schier mount |
 | Roof | Clamshell roof |
-| Weather | Boltwood cloud sensor (TODO: list other weather inputs) |
+| Camera | QHY camera with focuser. TODO: model, field of view, pixel scale, filters |
+| Weather | Boltwood cloud sensor, weather mast (temperature, humidity, pressure), allsky camera |
 | Software | pyobs modules on `ocs-server`, controlled from the pyobs GUI |
-| Camera | TODO: camera, field of view, pixel scale, filters |
 
 !!! note "This manual is a work in progress"
     Boxes marked **TODO** still need to be written. Found a mistake or something out of

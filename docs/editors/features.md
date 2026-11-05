@@ -1,7 +1,6 @@
 ---
 title: Feature showcase
 description: Everything this site can render, with the Markdown that produces it.
-icon: material/palette
 tags:
   - editors
   - reference

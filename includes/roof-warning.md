@@ -1,3 +1,3 @@
-!!! danger "Example shared warning"
-    This box lives in `includes/roof-warning.md` and is pulled into pages with
-    `--8<-- "roof-warning.md"`. Edit it once, it changes everywhere.
+!!! danger "Before you move the roof"
+    Check that the current weather is inside the limits (see *Weather & safety*).
+    TODO: other checks before the roof moves (nobody on or near the roof, mount parked?).

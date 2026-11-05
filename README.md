@@ -39,12 +39,15 @@ rotse-observer-manual/
 ├── docs/                    ← THE CONTENT: one .md file = one page
 │   ├── index.md             ← home page
 │   ├── before-you-observe.md
+│   ├── weather-and-safety.md
 │   ├── startup.md
 │   ├── observing.md
-│   ├── weather-and-safety.md
 │   ├── shutdown.md
 │   ├── troubleshooting.md
 │   ├── contacts.md
+│   ├── about.md
+│   ├── maintenance/         ← on site: safety, dry air pump, roof by hand, mount faults, restarts
+│   ├── reference/           ← network and services
 │   ├── editors/features.md  ← FEATURE SHOWCASE: everything the site can do
 │   ├── editors/tags.md      ← pages grouped by tag
 │   ├── assets/              ← images (logo, screenshots)
@@ -52,15 +55,20 @@ rotse-observer-manual/
 │   └── stylesheets/extra.css← colours
 ├── includes/                ← reusable text, pulled into pages (not pages themselves)
 │   ├── abbreviations.md     ← glossary: tooltips on every page
-│   └── roof-warning.md      ← example of a shared warning box
+│   └── roof-warning.md      ← "before you move the roof" box, used on the Startup page
 ├── pdf/cover_page.tpl       ← cover page of the PDF
 ├── hooks/build_info.py      ← version + date from git (for the PDF cover)
 ├── scripts/make_pdf.py      ← makes the PDF
 ├── templates/               ← copy-paste starting points (not part of the site)
-│   ├── page.md
+│   ├── page.md              ← procedure page
+│   ├── device.md            ← hardware page for reference/
 │   └── snippets.md
 └── site/                    ← built website (generated, never edit, not in git)
 ```
+
+### Menu names
+
+Menu names: plain words, no emoji, icons or symbols (write "and", not "&").
 
 ## 4. Everyday tasks
 
@@ -82,6 +90,7 @@ Open the `.md` file in `docs/` in any editor (VS Code is fine), change it, save.
 ### Add a new page
 
 1. Copy the template: `cp templates/page.md docs/focusing.md`
+   (hardware page for later: `templates/device.md`)
    (lowercase, hyphens, no spaces).
 2. Add it to the menu in `mkdocs.yml` under `nav:`, where it should appear:
    ```yaml
