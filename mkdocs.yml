@@ -22,12 +22,15 @@ nav:
   - About this manual: about.md
   - Data access: data-access.md
   - Maintenance:
-      - Running the vacuum pump: maintenance/dry-air-pump.md
+      - Running the vacuum pump: maintenance/mast-pi.md
       - Resolving severe mount failures: maintenance/mount-severe-fault.md
       - Manual operation of the roof: maintenance/manual-operation-of-roof.md
   - For editors:
       - Feature showcase: editors/features.md
       - Tags: editors/tags.md
+  - Weather Sensors and All sky camera:
+      - All sky camera & Mast Weather Station: weather-allsky/mast-pi.md
+      - Boltwood cloud sensor: weather-allsky/boltwood.md
 
 theme:
   name: material
